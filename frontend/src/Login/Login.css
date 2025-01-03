@@ -1,0 +1,12 @@
+.layout {
+  max-width: 100%;
+}
+
+.layout .background {
+  margin-top: 30px;
+}
+
+.form-title img {
+  max-width: 60%;
+  height: auto;
+}

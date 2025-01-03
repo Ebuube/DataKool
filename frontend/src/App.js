@@ -6,7 +6,7 @@ class App extends Component {
  render() {
   return (
     <div>
-      <Login />
+      <Login logo='/logo.png' alt='DataKool' />
     </div>
   );
  }
