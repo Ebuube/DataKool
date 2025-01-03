@@ -3,10 +3,14 @@
 }
 
 .layout .background {
-  margin-top: 30px;
+  margin-top: 3em;
 }
 
 .form-title img {
   max-width: 60%;
   height: auto;
+}
+
+.form-title p {
+  font-size: 1.3em;
 }
