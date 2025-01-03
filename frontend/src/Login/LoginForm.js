@@ -21,16 +21,18 @@ class LoginForm extends Component {
             placeholder='Password'
           />
         </div>
-        <button
-          className='ui left floated button'
-          type='button'>
-          Login
-        </button>
-        <button
-          className='ui right floated button'
-          type='button'>
-          Forgot Password
-        </button>
+        <div className='ui bottom attached buttons field'>
+          <button
+            className='ui left floated button'
+            type='button'>
+            Login
+          </button>
+          <button
+            className='ui right floated button'
+            type='button'>
+            Forgot Password
+          </button>
+        </div>
       </form>
     )
   }
