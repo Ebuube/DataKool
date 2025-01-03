@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
     <div className='ui grid'>
       <div className='row'>
         <div className='sixteen wide column'>
-          <Header />
+          <Header logo='/logo.png' />
         </div>
       </div>
       <div className='row'>
