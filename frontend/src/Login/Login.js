@@ -24,6 +24,7 @@ class Login extends Component {
               />
               <p className='row'>Login to access the portal</p>
             </div>
+            <div className='ui hidden divider '></div>
             <LoginForm />
           </div>
         </div>
