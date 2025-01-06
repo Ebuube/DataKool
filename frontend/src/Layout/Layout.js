@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Grid, GridColumn, GridRow, Segment } from "semantic-ui-react";
+import Header from './Header.js';
 
 const Layout = ({ children }) => {
   const currentPath = window.location.pathname;
@@ -13,7 +14,7 @@ const Layout = ({ children }) => {
   return (
     <Container as={Grid}>
       <GridRow>
-        <p>Header</p>
+        <Header />
       </GridRow>
       <GridRow>
         <Container fluid as={Grid}>
