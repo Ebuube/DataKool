@@ -4,7 +4,6 @@ import { Container, Grid, GridColumn, Image, List, ListItem } from "semantic-ui-
 class InfoWidget extends Component {
   render() {
     const { data } = this.props;
-    console.log(data);
     return(
       <Grid verticalAlign="middle">
         <Grid.Row>
@@ -17,7 +16,6 @@ class InfoWidget extends Component {
           <Grid.Column width={3}>
             <Image
               circular
-              fluid
               src={data.photo}
               size='tiny'
             />
