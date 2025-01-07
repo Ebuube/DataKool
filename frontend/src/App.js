@@ -16,7 +16,7 @@ class App extends Component {
         </Layout>
       </Container>
     );
-  }
-}
+  };
+};
 
 export default App;
