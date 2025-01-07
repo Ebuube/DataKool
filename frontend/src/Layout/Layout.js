@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Divider, Grid, GridColumn, GridRow, Segment } from "semantic-ui-react";
 import Header from './Header.js';
+import Footer from './Footer.js';
 
 const Layout = ({ children }) => {
   const currentPath = window.location.pathname;
@@ -29,8 +30,9 @@ const Layout = ({ children }) => {
           </GridColumn>
         </Container>
       </GridRow>
+      <Divider />
       <GridRow>
-        <p>Footer</p>
+        <Footer />
       </GridRow>
     </Container>
   )
