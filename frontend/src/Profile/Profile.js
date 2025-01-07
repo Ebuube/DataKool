@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Form from '../Form/Form.js';
+import ResourceForm from '../Forms/ResourceForm.js';
 
 class Profile extends Component {
   render() {
@@ -22,7 +22,7 @@ class Profile extends Component {
       },
     };
     return (
-      <Form format={form_format} />
+      <ResourceForm format={form_format} />
     );
   };
 };
