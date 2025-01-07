@@ -27,7 +27,7 @@ class NavMenu extends Component {
           name={nav}
           active={this.state.activeItem === nav}
           onClick={this.handleItemClick}
-        />
+      />
     ));
     return(
       <Menu fluid vertical tabular>
