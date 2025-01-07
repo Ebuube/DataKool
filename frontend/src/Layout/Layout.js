@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Divider, Grid, GridColumn, GridRow, Segment } from "semantic-ui-react";
 import Header from './Header.js';
 import Footer from './Footer.js';
+import NavMenu from './NavMenu.js';
 
 const Layout = ({ children }) => {
   const currentPath = window.location.pathname;
@@ -21,7 +22,7 @@ const Layout = ({ children }) => {
       <GridRow>
         <Container fluid as={Grid}>
           <GridColumn width={3}>
-            <p>Menu</p>
+            <NavMenu />
           </GridColumn>
           <GridColumn width={13}>
             <Segment>
