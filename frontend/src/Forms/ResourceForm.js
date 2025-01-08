@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Container, Grid } from "semantic-ui-react";
 import FormFields from './FormFields.js';
+import ActionButtons from './ActionButtons.js';
 
 class ResourceForm extends Component {
   /* Sample format
@@ -34,7 +35,7 @@ class ResourceForm extends Component {
           <FormFields format={fields} />
         </Grid.Column>
         <Grid.Column width={3}>
-          ActionButtons
+          <ActionButtons format={buttons} />
         </Grid.Column>
       </Container>
     );
