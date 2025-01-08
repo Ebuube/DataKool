@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Form, } from "semantic-ui-react";
+import UniversitySearch from './UniversitySearch.js';
 
 class FormFields extends Component {
   render() {
@@ -86,7 +87,10 @@ class FormFields extends Component {
           />
         }
         {fields.university &&
-          <div>University Search...</div>
+          <Form.Field>
+            <label>University</label>
+            <UniversitySearch />
+          </Form.Field>
         }
         {fields.toggle_check_box &&
           <Form.Checkbox
