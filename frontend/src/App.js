@@ -5,14 +5,20 @@ import Profile from './Profile/Profile.js';
 import {
   Container,
 } from 'semantic-ui-react';
+import { Route, Routes } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
       <Container fluid>
         <Layout>
-          {/* <Login /> */}
-          <Profile />
+          <Routes>
+              {/* <Login /> */}
+              {/* <Profile /> */}
+              <Route path='/login' element={<Login />} />
+              <Route path='/profile' element={<Profile />} />
+              <Route path='*' element={<h1>No match component...</h1>} />
+          </Routes>
         </Layout>
       </Container>
     );

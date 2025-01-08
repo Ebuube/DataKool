@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import { Menu, MenuItem } from "semantic-ui-react";
 
 class NavMenu extends Component {
   state = {
-    activeItem: 'Students'  /* Default state */
+    activeItem: ''  /* Default state */
   };
 
   handleItemClick = (e, data) => {
@@ -19,10 +20,11 @@ class NavMenu extends Component {
       'Students',
       'Files',
       'Profile',
-      'Register Admin',
+      'Admin',
       ];
     const items = navs.map((nav, index) => (
-      <MenuItem
+      <MenuItem as={NavLink}
+          to={nav.toLowerCase()}
           key={index}
           name={nav}
           active={this.state.activeItem === nav}
