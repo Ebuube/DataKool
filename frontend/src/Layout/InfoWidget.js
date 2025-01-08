@@ -1,5 +1,5 @@
 import React, { Component, } from "react";
-import { Container, Grid, GridColumn, Image, List, ListItem } from "semantic-ui-react";
+import { Grid, Image, } from "semantic-ui-react";
 
 class InfoWidget extends Component {
   render() {
