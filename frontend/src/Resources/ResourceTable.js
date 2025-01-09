@@ -2,6 +2,21 @@ import { Component } from "react";
 import { Table } from "semantic-ui-react";
 
 class ResourceTable extends Component {
+  /*
+  const table_format = {
+      headers: [
+        'First Name',
+        'Last Name',
+        'Gender',
+        'JAMB Reg. No.',
+      ],
+      rows: [
+        { key: 1, firstName: 'Ebube', lastName: 'Onwuta', gender: 'Male', jambRegNo: '424dad-dad9', },
+        { key: 2, firstName: 'Ada', lastName: 'Egwu', gender: 'Female', jambRegNo: '4aad-4qeda-ad', },
+        { key: 3, firstName: 'Victor', lastName: 'Ayomide', gender: 'Male', jambRegNo: '23sf-34c0-2424', },
+      ],
+    };
+  */
   render() {
     const { headers, rows } = this.props.format;
     const tableHeaders = headers.map((headerCell, index) => (
