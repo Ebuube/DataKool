@@ -4,6 +4,7 @@ import Layout from './Layout/Layout.js';
 import StudentSearch from './Student/StudentSearch.js';
 import StudentCreate from './Student/StudentCreate.js';
 import StudentDetail from './Student/StudentDetail.js';
+import FileSearch from './File/FileSearch.js';
 import FileCreate from './File/FileCreate.js';
 import FileDetail from './File/FileDetail.js';
 import Profile from './Profile/Profile.js';
@@ -23,6 +24,7 @@ class App extends Component {
               <Route path='/students/' element={<StudentSearch />} />
               <Route path='/students/new' element={<StudentCreate />} />
               <Route path='/students/detail/*' element={<StudentDetail />} />
+              <Route path='/files/' element={<FileSearch />} />
               <Route path='/files/new' element={<FileCreate />} />
               <Route path='/files/detail/*' element={<FileDetail />} />
               <Route path='/profile' element={<Profile />} />
