@@ -3,9 +3,14 @@ import ResourceSearch from '../Resources/ResourceSearch.js';
 
 class StudentSearch extends Component {
   render() {
+    const form_format = {
+      type: 'user'
+    };
     return(
       <div>
-        <ResourceSearch />
+        <ResourceSearch
+          format={form_format}
+        />
         <p>ResourceTable</p>
       </div>
     );
