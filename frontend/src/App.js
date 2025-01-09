@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Login from './Login/Login.js';
 import Layout from './Layout/Layout.js';
 import StudentCreate from './Student/StudentCreate.js';
+import StudentDetail from './Student/StudentDetail.js';
 import FileCreate from './File/FileCreate.js';
 import Profile from './Profile/Profile.js';
 import Admin from './Admin/Admin.js';
@@ -20,6 +21,7 @@ class App extends Component {
               {/* <Profile /> */}
               <Route path='/login' element={<Login />} />
               <Route path='/students/new' element={<StudentCreate />} />
+              <Route path='/students/detail/*' element={<StudentDetail />} />
               <Route path='/files/new' element={<FileCreate />} />
               <Route path='/profile' element={<Profile />} />
               <Route path='/admin' element={<Admin />} />
