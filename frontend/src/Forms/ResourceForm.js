@@ -17,6 +17,9 @@ class ResourceForm extends Component {
         university: true,
         toggle_check_box: true,
         last_updated: true,
+        filename: true,
+        owner: true,
+        description: true,
       },
       buttons: {
         orientation: 'vertical',

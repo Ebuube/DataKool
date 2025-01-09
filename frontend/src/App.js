@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Login from './Login/Login.js';
 import Layout from './Layout/Layout.js';
 import StudentCreate from './Student/StudentCreate.js';
+import FileCreate from './File/FileCreate.js';
 import Profile from './Profile/Profile.js';
 import Admin from './Admin/Admin.js';
 import {
@@ -19,6 +20,7 @@ class App extends Component {
               {/* <Profile /> */}
               <Route path='/login' element={<Login />} />
               <Route path='/students/new' element={<StudentCreate />} />
+              <Route path='/files/new' element={<FileCreate />} />
               <Route path='/profile' element={<Profile />} />
               <Route path='/admin' element={<Admin />} />
               <Route path='*' element={<h1>No match component...</h1>} />

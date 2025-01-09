@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Form, } from "semantic-ui-react";
 import UniversitySearch from './UniversitySearch.js';
+import OwnerSearch from './OwnerSearch.js';
 
 class FormFields extends Component {
   render() {
@@ -103,6 +104,28 @@ class FormFields extends Component {
             <label>Last updated</label>
             <p>{`${(new Date(Date.now())).toLocaleDateString()} - ${(new Date(Date.now())).toLocaleTimeString()}`}</p>
           </Form.Field>
+        }
+        {fields.filename &&
+          <Form.Input
+            label='File name'
+            type='text'
+            name='filename'
+            placeholder='File Name'
+          />
+        }
+        {fields.owner &&
+          <Form.Field>
+            <label>Owner</label>
+            <OwnerSearch />
+          </Form.Field>
+        }
+        {fields.description &&
+          <Form.Input
+            label='Description'
+            type='text'
+            name='description'
+            placeholder='This File is for the purpose of ...'
+          />
         }
       </Form>
     );
