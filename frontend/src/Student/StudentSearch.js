@@ -1,10 +1,11 @@
 import { Component } from "react";
+import ResourceSearch from '../Resources/ResourceSearch.js';
 
 class StudentSearch extends Component {
   render() {
     return(
       <div>
-        <p>ResourceSearch</p>
+        <ResourceSearch />
         <p>ResourceTable</p>
       </div>
     );
