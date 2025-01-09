@@ -4,6 +4,7 @@ import Layout from './Layout/Layout.js';
 import StudentCreate from './Student/StudentCreate.js';
 import StudentDetail from './Student/StudentDetail.js';
 import FileCreate from './File/FileCreate.js';
+import FileDetail from './File/FileDetail.js';
 import Profile from './Profile/Profile.js';
 import Admin from './Admin/Admin.js';
 import {
@@ -23,6 +24,7 @@ class App extends Component {
               <Route path='/students/new' element={<StudentCreate />} />
               <Route path='/students/detail/*' element={<StudentDetail />} />
               <Route path='/files/new' element={<FileCreate />} />
+              <Route path='/files/detail/*' element={<FileDetail />} />
               <Route path='/profile' element={<Profile />} />
               <Route path='/admin' element={<Admin />} />
               <Route path='*' element={<h1>No match component...</h1>} />
