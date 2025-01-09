@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from './Login/Login.js';
 import Layout from './Layout/Layout.js';
+import StudentSearch from './Student/StudentSearch.js';
 import StudentCreate from './Student/StudentCreate.js';
 import StudentDetail from './Student/StudentDetail.js';
 import FileCreate from './File/FileCreate.js';
@@ -18,9 +19,8 @@ class App extends Component {
       <Container fluid>
         <Layout>
           <Routes>
-              {/* <Login /> */}
-              {/* <Profile /> */}
               <Route path='/login' element={<Login />} />
+              <Route path='/students/' element={<StudentSearch />} />
               <Route path='/students/new' element={<StudentCreate />} />
               <Route path='/students/detail/*' element={<StudentDetail />} />
               <Route path='/files/new' element={<FileCreate />} />
