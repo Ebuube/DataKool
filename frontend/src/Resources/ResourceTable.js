@@ -5,15 +5,18 @@ class ResourceTable extends Component {
   /*
   const table_format = {
       headers: [
+        'Id',
         'First Name',
         'Last Name',
         'Gender',
         'JAMB Reg. No.',
       ],
+      type: 'files/students',
       rows: [
-        { key: 1, firstName: 'Ebube', lastName: 'Onwuta', gender: 'Male', jambRegNo: '424dad-dad9', },
-        { key: 2, firstName: 'Ada', lastName: 'Egwu', gender: 'Female', jambRegNo: '4aad-4qeda-ad', },
-        { key: 3, firstName: 'Victor', lastName: 'Ayomide', gender: 'Male', jambRegNo: '23sf-34c0-2424', },
+        [ 1, 'Resume', '.pdf', 'Emeka Odera', ],
+        [ 2, 'Memorandum', '.docx', 'Chidi Ifedi', ],
+        [ 3, 'Sitaled-craft', '.png', 'Ebube Onwuta', ],
+        [ 4, 'Browse Symptoms and Signs ...', '.pdf', 'Gozie Okafor', ],
       ],
     };
   */
@@ -27,16 +30,19 @@ class ResourceTable extends Component {
       </Table.HeaderCell>
     ));
 
-    const tableRows = rows.map((row, index) => (
-      <Table.Row
-        key={row.key}
-      >
-        <Table.Cell>{row.firstName}</Table.Cell>
-        <Table.Cell>{row.lastName}</Table.Cell>
-        <Table.Cell>{row.gender}</Table.Cell>
-        <Table.Cell>{row.jambRegNo}</Table.Cell>
-      </Table.Row>
-    ));
+    const tableRows = rows.map((row, index) => {
+      const cells = [];
+      for (let x = 0; x < row.length; x++) {
+        cells.push(<Table.Cell>{row[x]}</Table.Cell>);
+      }
+      return (
+        <Table.Row
+          key={row.key}
+        >
+          {cells}
+        </Table.Row>
+      );
+    });
 
     return(
       <Table>

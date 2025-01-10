@@ -9,15 +9,17 @@ class StudentSearch extends Component {
     };
     const table_format = {
       headers: [
+        'Id',
         'First Name',
         'Last Name',
         'Gender',
         'JAMB Reg. No.',
       ],
+      type: 'students',
       rows: [
-        { key: 1, firstName: 'Ebube', lastName: 'Onwuta', gender: 'Male', jambRegNo: '424dad-dad9', },
-        { key: 2, firstName: 'Ada', lastName: 'Egwu', gender: 'Female', jambRegNo: '4aad-4qeda-ad', },
-        { key: 3, firstName: 'Victor', lastName: 'Ayomide', gender: 'Male', jambRegNo: '23sf-34c0-2424', },
+        [ 1, 'Ebube', 'Onwuta', 'Male', '424dad-dad9', ],
+        [ 2, 'Ada', 'Egwu', 'Female', '4aad-4qeda-ad', ],
+        [ 3, 'Victor', 'Ayomide', 'Male', '23sf-34c0-2424', ],
       ],
     };
 
