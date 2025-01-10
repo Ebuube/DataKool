@@ -37,7 +37,7 @@ class ResourceTable extends Component {
       }
       return (
         <Table.Row
-          key={row.key}
+          key={row[0]}
         >
           {cells}
         </Table.Row>
