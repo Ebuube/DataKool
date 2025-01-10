@@ -1,5 +1,6 @@
 import { Component } from "react";
-import { Table } from "semantic-ui-react";
+import { NavLink } from "react-router-dom";
+import { Button, Table } from "semantic-ui-react";
 
 class ResourceTable extends Component {
   /*
@@ -21,7 +22,7 @@ class ResourceTable extends Component {
     };
   */
   render() {
-    const { headers, rows } = this.props.format;
+    const { headers, type, rows } = this.props.format;
     const tableHeaders = headers.map((headerCell, index) => (
       <Table.HeaderCell
         key={index}
@@ -31,13 +32,17 @@ class ResourceTable extends Component {
     ));
 
     const tableRows = rows.map((row, index) => {
-      const cells = [];
-      for (let x = 0; x < row.length; x++) {
-        cells.push(<Table.Cell>{row[x]}</Table.Cell>);
-      }
+      const id = row[0];
+      const cells = row.map((cell, index) =>
+        <Table.Cell
+        >
+          {cell}
+        </Table.Cell>
+      );
       return (
         <Table.Row
-          key={row[0]}
+          key={id}
+          style={{ cursor: 'pointer'}}
         >
           {cells}
         </Table.Row>
@@ -54,6 +59,17 @@ class ResourceTable extends Component {
         <Table.Body>
           {tableRows}
         </Table.Body>
+        <Table.Footer>
+          <Table.Row>
+            <Button
+              as={NavLink}
+              to={`/${type}/new`}
+              attached='bottom'
+            >
+              New
+            </Button>
+          </Table.Row>
+        </Table.Footer>
       </Table>
     );
   };

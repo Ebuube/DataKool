@@ -23,7 +23,8 @@ class NavMenu extends Component {
       'Admin',
       ];
     const items = navs.map((nav, index) => (
-      <MenuItem as={NavLink}
+      <MenuItem
+          as={NavLink}
           to={nav.toLowerCase()}
           key={index}
           name={nav}
