@@ -20,7 +20,7 @@ class Layout extends Component {
             </GridColumn>
             <GridColumn width={13}>
               <Segment>
-                <Outlet />
+                <Outlet /> {/* Render all the child components */}
               </Segment>
             </GridColumn>
           </Container>
