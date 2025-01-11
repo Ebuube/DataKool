@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Button, ButtonGroup, Container, Form, FormField } from "semantic-ui-react";
 import './LoginForm.css';
+import { Link } from "react-router-dom";
 
 class LoginForm extends Component {
   render() {
@@ -23,7 +24,12 @@ class LoginForm extends Component {
           />
         </FormField>
         <ButtonGroup attached='bottom'>
-          <Button>Login</Button>
+          <Button
+            as={Link}
+            to='/students'
+          >
+            Login
+          </Button>
           <Button>Forgot Password</Button>
         </ButtonGroup>
       </Container>
