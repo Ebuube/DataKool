@@ -18,20 +18,28 @@ class App extends Component {
   render() {
     return (
       <Container fluid>
-        <Layout>
           <Routes>
               <Route path='/login' element={<Login />} />
-              <Route path='/students/' element={<StudentSearch />} />
-              <Route path='/students/new' element={<StudentCreate />} />
-              <Route path='/students/detail/*' element={<StudentDetail />} />
-              <Route path='/files/' element={<FileSearch />} />
-              <Route path='/files/new' element={<FileCreate />} />
-              <Route path='/files/detail/*' element={<FileDetail />} />
-              <Route path='/profile' element={<Profile />} />
-              <Route path='/admin' element={<Admin />} />
+
+              <Route element={<Layout />}>
+                <Route path='students'>
+                  <Route index element={<StudentSearch />} />
+                  <Route path='new' element={<StudentCreate />} />
+                  <Route path='detail/:studentId' element={<StudentDetail />} />
+                </Route>
+
+                <Route path='files'>
+                  <Route index element={<FileSearch />} />
+                  <Route path='new' element={<FileCreate />} />
+                  <Route path='detail/:fileId' element={<FileDetail />} />
+                </Route>
+
+                <Route path='profile' element={<Profile />} />
+                <Route path='admin' element={<Admin />} />
+              </Route>
+
               <Route path='*' element={<h1>No match component...</h1>} />
           </Routes>
-        </Layout>
       </Container>
     );
   };
