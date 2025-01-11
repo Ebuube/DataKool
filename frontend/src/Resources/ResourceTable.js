@@ -1,8 +1,8 @@
 import { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, Table } from "semantic-ui-react";
 
-class ResourceTable extends Component {
+class ResourceTableWithoutNavigate extends Component {
   /*
   const table_format = {
       headers: [
@@ -21,6 +21,10 @@ class ResourceTable extends Component {
       ],
     };
   */
+ handleRowclick = (id) => {
+  this.props.navigate(`detail/${id}`);
+ };
+
   render() {
     const { headers, type, rows } = this.props.format;
     const tableHeaders = headers.map((headerCell, index) => (
@@ -34,14 +38,14 @@ class ResourceTable extends Component {
     const tableRows = rows.map((row, index) => {
       const id = row[0];
       const cells = row.map((cell, index) =>
-        <Table.Cell
-        >
+        <Table.Cell>
           {cell}
         </Table.Cell>
       );
       return (
         <Table.Row
           key={id}
+          onClick={() => this.handleRowclick(id)}
           style={{ cursor: 'pointer'}}
         >
           {cells}
@@ -62,7 +66,7 @@ class ResourceTable extends Component {
         <Table.Footer>
           <Table.Row>
             <Button
-              as={NavLink}
+              as={Link}
               to={`/${type}/new`}
               attached='bottom'
             >
@@ -75,4 +79,10 @@ class ResourceTable extends Component {
   };
 };
 
-export default ResourceTable;
+export default function ResourceTable(props) {
+  const navigate = useNavigate();
+  return <ResourceTableWithoutNavigate
+            {...props}
+            navigate={navigate}
+          />;
+};
