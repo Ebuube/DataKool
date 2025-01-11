@@ -13,6 +13,7 @@ class Layout extends Component {
           <Header />
         </GridRow>
         <Divider />
+
         <GridRow>
           <Container fluid as={Grid}>
             <GridColumn width={3}>
@@ -25,6 +26,7 @@ class Layout extends Component {
             </GridColumn>
           </Container>
         </GridRow>
+
         <Divider />
         <GridRow>
           <Footer />
