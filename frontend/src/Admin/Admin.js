@@ -12,7 +12,7 @@ class Admin extends Component {
         address: true,
       },
       buttons: {
-        orientation: 'vertical',
+        orientation: 'horizontal',
         names: [
           'Save',
         ]

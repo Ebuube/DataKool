@@ -2,10 +2,11 @@ import { Component } from "react";
 import { Form, } from "semantic-ui-react";
 import UniversitySearch from './UniversitySearch.js';
 import OwnerSearch from './OwnerSearch.js';
+import ActionButtons from "./ActionButtons.js";
 
 class FormFields extends Component {
   render() {
-    const fields = this.props.format;
+    const { fields, buttons } = this.props.format;
     const genders = [
       'Male',
       'Female',
@@ -21,6 +22,9 @@ class FormFields extends Component {
 
     return (
       <Form>
+        <Form.Field>
+          <ActionButtons format={buttons} />
+        </Form.Field>
         {fields.fullname &&
           <Form.Field>
             <label>Full Name</label>

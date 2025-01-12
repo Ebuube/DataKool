@@ -33,14 +33,7 @@ class ResourceForm extends Component {
   render() {
     const { buttons, fields } = this.props.format;
     return (
-      <Container as={Grid}>
-        <Grid.Column width={13}>
-          <FormFields format={fields} />
-        </Grid.Column>
-        <Grid.Column width={3}>
-          <ActionButtons format={buttons} />
-        </Grid.Column>
-      </Container>
+      <FormFields format={{fields, buttons }} />
     );
   };
 };
