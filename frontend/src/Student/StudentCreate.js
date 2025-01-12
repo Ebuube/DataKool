@@ -15,7 +15,7 @@ class StudentCreate extends Component {
         university: true,
       },
       buttons: {
-        orientation: 'vertical',
+        orientation: 'horizontal',
         names: [
           'Save',
         ],

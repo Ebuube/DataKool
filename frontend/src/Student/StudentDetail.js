@@ -16,7 +16,7 @@ class StudentDetail extends Component {
         last_updated: true,
       },
       buttons: {
-        orientation: 'vertical',
+        orientation: 'horizontal',
         names: [
           'Print',
           'Save',
