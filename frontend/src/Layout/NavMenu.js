@@ -21,6 +21,7 @@ class NavMenu extends Component {
       'Files',
       'Profile',
       'Admin',
+      'Exit',
       ];
     const items = navs.map((nav, index) => (
       <MenuItem

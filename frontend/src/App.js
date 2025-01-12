@@ -10,7 +10,7 @@ import FileCreate from './File/FileCreate.js';
 import FileDetail from './File/FileDetail.js';
 import Profile from './Profile/Profile.js';
 import Admin from './Admin/Admin.js';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -19,6 +19,7 @@ class App extends Component {
           <Routes>
             <Route index element={<h1>Landing page</h1>} />
             <Route path='/login' element={<Login />} />
+            <Route path='/exit' element={<Navigate to='/login' />} />
 
             <Route element={<Layout />}>
               <Route path='students'>
