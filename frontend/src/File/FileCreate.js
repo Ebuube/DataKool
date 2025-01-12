@@ -10,7 +10,7 @@ class FileCreate extends Component {
         description: true,
       },
       buttons: {
-        orientation: 'horizontal',
+        orientation: 'vertical',
         names: [
           'Save',
           'Upload',

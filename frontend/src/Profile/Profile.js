@@ -14,7 +14,7 @@ class Profile extends Component {
         last_updated: true,
       },
       buttons: {
-        orientation: 'horizontal',
+        orientation: 'vertical',
         names: [
           'Print',
           'Save',

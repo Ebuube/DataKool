@@ -10,7 +10,7 @@ class FileDetail extends Component {
         description: true,
       },
       buttons: {
-        orientation: 'horizontal',
+        orientation: 'vertical',
         names: [
           'Download',
           'Upload',
