@@ -27,6 +27,7 @@ class LoginForm extends Component {
           <Button
             as={Link}
             to='/students'
+            type='submit'
           >
             Login
           </Button>
