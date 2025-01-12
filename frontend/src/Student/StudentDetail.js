@@ -21,7 +21,7 @@ class StudentDetail extends Component {
           'Print',
           'Save',
           'Delete',
-          'File',
+          'Folder',
         ],
       },
     };
