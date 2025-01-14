@@ -2,6 +2,7 @@ import { Component } from "react";
 import { Dropdown } from "semantic-ui-react";
 
 class OwnerSearch extends Component {
+  /*
   state = {
     selectedOwner: '',
   };
@@ -9,12 +10,13 @@ class OwnerSearch extends Component {
   handleChange = (e, { value }) => {
     this.setState({ selectedOwner: value });
   };
+  */
 
   render() {
     const ownerOptions = [
-      { key: '1', text: 'Onwuta Ebube', value: '1' },
-      { key: '2', text: 'Emeka Okpabie', value: '2' },
-      { key: '3', text: 'Jide Ukedi', value: '3' },
+      { key: '1', text: 'Onwuta Ebube', value: 'ebube-id' },
+      { key: '2', text: 'Emeka Okpabie', value: 'emeka-id' },
+      { key: '3', text: 'Jide Ukedi', value: 'jide-id' },
     ];
     return (
       <Dropdown
@@ -23,8 +25,9 @@ class OwnerSearch extends Component {
         search
         selection
         options={ownerOptions}
-        onChange={this.handleChange}
-        value={this.state.selectedOwner}
+        name={this.props.name}
+        onChange={this.props.onChange}
+        value={this.props.value}
       />
     );
   };

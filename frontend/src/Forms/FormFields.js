@@ -5,7 +5,34 @@ import OwnerSearch from './OwnerSearch.js';
 import ActionButtons from "./ActionButtons.js";
 
 class FormFields extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lastUpdated: `${(new Date(Date.now())).toLocaleDateString()} - ${(new Date(Date.now())).toLocaleTimeString()}`
+    }; // lastUpdated should be fetched from the server
+  }
+
+  handleInputChange = (event, data) => {
+    /*
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    */
+    const { name ,value, checked } = data;
+    const type = data.type || (checked !== undefined ? 'checkbox' : 'text');
+
+    if (type === 'checkbox') {
+      this.setState({ [name]: checked });
+      console.log(`${name}: ${checked}`); // test
+    } else {
+      this.setState({ [name]: value });
+      console.log(`${name}: ${value}`); // test
+    }
+  };
+
   render() {
+    console.log(this.state); // test
+
     const { fields, buttons } = this.props.format;
     const genders = [
       'Male',
@@ -33,11 +60,15 @@ class FormFields extends Component {
                 type='text'
                 name='firstname'
                 placeholder='First Name'
+                onChange={this.handleInputChange}
+                value={this.state.firstname}
               />
               <Form.Input
                 type='text'
                 name='lastname'
                 placeholder='Last Name'
+                onChange={this.handleInputChange}
+                value={this.state.lastname}
               />
             </Form.Group>
           </Form.Field>
@@ -45,10 +76,13 @@ class FormFields extends Component {
         {fields.gender &&
           <Form.Dropdown
             fluid
+            name='gender'
             label='Gender'
             placeholder='Gender'
             selection
             options={genderOptions}
+            onChange={this.handleInputChange}
+            value={this.state.gender}
           />
         }
         {fields.telephone &&
@@ -57,14 +91,18 @@ class FormFields extends Component {
             type='text'
             name='telephone'
             placeholder='+234 - 000 - 0000 - 000'
+            onChange={this.handleInputChange}
+            value={this.state.telephone}
           />
         }
         {fields.guardian_phone &&
           <Form.Input
             label='Guardian Phone'
             type='text'
-            name='gaurdian-phone'
+            name='guardianPhone'
             placeholder='+234 - 000 - 0000 - 000'
+            onChange={this.handleInputChange}
+            value={this.state.guardianPhone}
           />
         }
         {fields.email &&
@@ -73,6 +111,8 @@ class FormFields extends Component {
             type='email'
             name='email'
             placeholder='me@gmail.com'
+            onChange={this.handleInputChange}
+            value={this.state.email}
           />
         }
         {fields.address &&
@@ -81,32 +121,43 @@ class FormFields extends Component {
             type='text'
             name='address'
             placeholder='Street, District, State, Country'
+            onChange={this.handleInputChange}
+            value={this.state.address}
           />
         }
         {fields.jamb_reg_no &&
           <Form.Input
             label='JAMB Reg. No.'
             type='text'
-            name='jamb-reg-no'
+            name='jambRegNo'
             placeholder='123ABC'
+            onChange={this.handleInputChange}
+            value={this.state.jambRegNo}
           />
         }
         {fields.university &&
           <Form.Field>
             <label>University</label>
-            <UniversitySearch />
+            <UniversitySearch
+              name='university'
+              onChange={this.handleInputChange}
+              value={this.state.university}
+            />
           </Form.Field>
         }
         {fields.toggle_check_box &&
           <Form.Checkbox
             label='Deactivated'
             slider
+            name='isDeactivated'
+            onChange={this.handleInputChange}
+            checked={this.state.isDeactivated}
           />
         }
         {fields.last_updated &&
           <Form.Field inline>
             <label>Last updated</label>
-            <p>{`${(new Date(Date.now())).toLocaleDateString()} - ${(new Date(Date.now())).toLocaleTimeString()}`}</p>
+            <p>{this.state.lastUpdated}</p>
           </Form.Field>
         }
         {fields.filename &&
@@ -115,12 +166,18 @@ class FormFields extends Component {
             type='text'
             name='filename'
             placeholder='File Name'
+            onChange={this.handleInputChange}
+            value={this.state.filename}
           />
         }
         {fields.owner &&
           <Form.Field>
             <label>Owner</label>
-            <OwnerSearch />
+            <OwnerSearch
+              name='owner'
+              onChange={this.handleInputChange}
+              value={this.state.owner}
+            />
           </Form.Field>
         }
         {fields.description &&
@@ -129,6 +186,8 @@ class FormFields extends Component {
             type='text'
             name='description'
             placeholder='This File is for the purpose of ...'
+            onChange={this.handleInputChange}
+            value={this.state.description}
           />
         }
       </Form>
