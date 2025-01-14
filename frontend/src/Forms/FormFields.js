@@ -18,7 +18,7 @@ class FormFields extends Component {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
     */
-    const { name ,value, checked } = data;
+    const { name, value, checked } = data;
     const type = data.type || (checked !== undefined ? 'checkbox' : 'text');
 
     if (type === 'checkbox') {
@@ -29,6 +29,26 @@ class FormFields extends Component {
       console.log(`${name}: ${value}`); // test
     }
   };
+
+  /*
+  const format = {
+      orientation: 'horizontal',
+      names: [
+        'Print',
+        'Save',
+        'Delete',
+        'Folder',
+        'Upload',
+        'Download',
+        'Delete',
+        'User',
+      ],
+    };
+  */
+  handleButtonClick = (event, data) => {
+    const { name } = data;
+    alert(`${name}: Why can I do for you?`);  // test
+  }
 
   render() {
     console.log(this.state); // test
@@ -50,7 +70,10 @@ class FormFields extends Component {
     return (
       <Form>
         <Form.Field>
-          <ActionButtons format={buttons} />
+          <ActionButtons
+            format={buttons}
+            onClick={this.handleButtonClick}
+          />
         </Form.Field>
         {fields.fullname &&
           <Form.Field>
