@@ -3,6 +3,19 @@ import ResourceSearch from "../Resources/ResourceSearch";
 import ResourceTable from "../Resources/ResourceTable";
 
 class FileSearch extends Component {
+  state = {
+    isSearching: false,
+    value: '',
+  };
+
+  handleSearchChange = (event, data) => {
+    const { name, value } = data;
+    alert(`${name}: ${value}`);
+    this.setState({
+      isSearching: true,
+      value: value });
+  };
+
   render() {
     const form_format = {
       type: 'file'
@@ -27,6 +40,9 @@ class FileSearch extends Component {
       <div>
         <ResourceSearch
           format={form_format}
+          onChange={this.handleSearchChange}
+          isSearching={this.state.isSearching}
+          value={this.state.value}
         />
         <ResourceTable
           format={table_format}
