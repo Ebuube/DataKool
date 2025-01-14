@@ -1,37 +1,46 @@
 import { Component } from "react";
 import { Button, ButtonGroup, Container, Form, FormField } from "semantic-ui-react";
 import './LoginForm.css';
-import { Link } from "react-router-dom";
 
 class LoginForm extends Component {
   render() {
     return(
-      <Container as={Form} text className="my-login-form" >
+      <Container
+        text
+        as={Form}
+        className="my-login-form"
+      >
         <FormField>
           <label>Email</label>
-          <input
+          <Form.Input
             type='email'
             name='email'
             placeholder='me@gmail.com'
+            value={this.props.email}
+            onChange={this.props.onChange}
           />
         </FormField>
         <FormField>
           <label>Password</label>
-          <input
+          <Form.Input
             type='password'
             name='password'
             placeholder='Password'
+            value={this.props.password}
+            onChange={this.props.onChange}
           />
         </FormField>
         <ButtonGroup attached='bottom'>
           <Button
-            as={Link}
-            to='/students'
             type='submit'
+            onClick={this.props.onSubmit}
           >
             Login
           </Button>
-          <Button>Forgot Password</Button>
+          <Button
+            type='click'
+            onClick={this.props.onForgotPassword}
+          >Forgot Password</Button>
         </ButtonGroup>
       </Container>
     );

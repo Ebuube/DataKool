@@ -3,8 +3,42 @@ import { Divider, Grid, GridColumn, GridRow, Image } from "semantic-ui-react";
 import LoginForm from './LoginForm.js';
 import './Login.css';
 import Footer from "../Layout/Footer.js";
+import { useNavigate } from "react-router-dom";
 
-class Login extends Component {
+class LoginWithoutNavigate extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+    };
+  };
+
+  handleInputChange = (event, data) => {
+    /*
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    */
+    const { name, value, checked } = data;
+    const type = data.type || (checked !== undefined ? 'checkbox' : 'text');
+
+    if (type === 'checkbox') {
+      this.setState({ [name]: checked });
+    } else {
+      this.setState({ [name]: value });
+    }
+  };
+
+  handleSubmit = (event, data) => {
+    alert('Submitted form successfully');
+    this.props.navigate('/students');
+  };
+
+  handleForgotPassword = (event, data) => {
+    alert('Create new password');
+  };
+
   render() {
     return (
       <div>
@@ -24,7 +58,13 @@ class Login extends Component {
                 />
               </GridRow>
               <GridRow>
-                <LoginForm />
+                <LoginForm
+                  onChange={this.handleInputChange}
+                  email={this.state.email}
+                  password={this.state.password}
+                  onSubmit={this.handleSubmit}
+                  onForgotPassword={this.handleForgotPassword}
+                />
               </GridRow>
             </Grid>
           </GridColumn>
@@ -36,4 +76,10 @@ class Login extends Component {
   };
 };
 
-export default Login;
+export default function Login(props) {
+  const navigate = useNavigate();
+  return <LoginWithoutNavigate
+          {...props}
+          navigate={navigate}
+        />;
+};
