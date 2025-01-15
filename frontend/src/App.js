@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LandingPage from './Landing/LandingPage.js';
 import ErrorPage from './Error/ErrorPage.js';
 import StudentCenter from './Center/StudentCenter.js';
 import Login from './Login/Login.js';
@@ -18,7 +19,7 @@ class App extends Component {
     return (
       <StudentCenter>
           <Routes>
-            <Route index element={<h1>Landing page</h1>} />
+            <Route index element={<LandingPage />} />
             <Route path='*' element={<ErrorPage />} />
 
             <Route path='/login' element={<Login />} />
