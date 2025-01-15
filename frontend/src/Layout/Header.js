@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Container, Divider, Grid, GridColumn, Image } from "semantic-ui-react";
+import { Container, Grid, GridColumn, Image } from "semantic-ui-react";
 import InfoWidget from './InfoWidget.js';
 
 class Header extends Component {
   render() {
+    // user data will be stored in `sessionStorage`
     const user = {
       role: 'Admin',
       username: 'Jane Doe',
