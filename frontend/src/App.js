@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ErrorPage from './Error/ErrorPage.js';
 import StudentCenter from './Center/StudentCenter.js';
 import Login from './Login/Login.js';
 import Layout from './Layout/Layout.js';
@@ -18,6 +19,8 @@ class App extends Component {
       <StudentCenter>
           <Routes>
             <Route index element={<h1>Landing page</h1>} />
+            <Route path='*' element={<ErrorPage />} />
+
             <Route path='/login' element={<Login />} />
             <Route path='/exit' element={<Navigate to='/login' />} />
 
@@ -38,7 +41,6 @@ class App extends Component {
               <Route path='admin' element={<Admin />} />
             </Route>
 
-            <Route path='*' element={<h1>No match component...</h1>} />
           </Routes>
       </StudentCenter>
     );
